@@ -1,0 +1,894 @@
+/* Landing page color palette */
+:root {
+    --color-primary: #C65D35;
+    --color-secondary: #263D63;
+    --color-sand: #E8C79D;
+    --color-background: #FAF5ED;
+    --color-text: #33343B;
+}
+
+/* Main navigation header */
+.reading-header {
+    border-bottom: 1px solid var(--color-sand);
+    padding: 0.75rem 0;
+    background-color: var(--color-secondary);
+}
+
+.reading-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-background);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.reading-brand:hover {
+    color: var(--color-sand);
+}
+.brand-icon {
+    width: 28px;
+    height: 28px;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    font-size: 1.6rem;
+}
+
+.header-navigation {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.header-navigation .nav-link {
+    color: var(--color-background);
+    padding: 0.5rem 0;
+    text-decoration: none;
+}
+
+.header-navigation .nav-link.active {
+    color: var(--color-sand);
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-sand);
+}
+
+.header-navigation .nav-link:hover {
+    color: var(--color-sand);
+}
+
+.logout-link {
+    margin-left: 0.25rem;
+}
+
+/* Keep the header comfortable on small screens */
+@media (max-width: 576px) {
+    .reading-brand {
+        font-size: 1.1rem;
+    }
+
+    .header-navigation {
+        gap: 0.65rem;
+        font-size: 0.9rem;
+    }
+}
+
+.calendar-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.calendar-month {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    min-height: 300px;
+}
+
+.calendar-month h2 {
+    color: var(--color-secondary);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.35rem;
+}
+
+.weekday {
+    text-align: center;
+    font-weight: bold;
+    color: var(--color-secondary);
+    padding: 0.5rem 0;
+}
+
+.calendar-day {
+    text-align: center;
+    padding: 0.5rem 0;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    min-width: 0;
+    background: linear-gradient(to right, transparent 50%, transparent 50%);
+    background-color: #ffffff;
+    font-weight: 600;
+    position: relative;
+}
+
+.calendar-day span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;
+    color: var(--color-text);
+}
+
+/* Morning reading completed: left half green */
+.calendar-day.morning-completed {
+    background: linear-gradient(to right, #198754 50%, #ffffff 50%);
+    color: #212529;
+}
+
+/* Evening reading completed: right half green */
+.calendar-day.evening-completed {
+    background: linear-gradient(to right, #ffffff 50%, #198754 50%);
+    color: #212529;
+}
+
+/* Both readings completed: entire day green */
+.calendar-day.morning-completed.evening-completed {
+    background: #198754;
+    color: #ffffff;
+}
+
+.calendar-day.morning-completed.evening-completed span {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.calendar-day.today {
+    background-color: #fff3cd;
+    color: #856404;
+    font-weight: bold;
+    border: 3px solid #ffca2c;
+}
+
+/* Homepage greeting */
+.greeting-card {
+    padding: 1.5rem 0 1rem;
+}
+
+.greeting-card h1 {
+    margin-bottom: 0.4rem;
+    color: var(--color-text);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.greeting-card p {
+    margin-bottom: 0;
+    color: var(--color-secondary);
+    font-size: 1rem;
+}
+
+/* Daily reading assignment */
+.reading-assignment {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--color-sand);
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+}
+
+.reading-assignment h2 {
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.reading-portion {
+    padding: 1rem;
+    border-radius: 0.375rem;
+    background-color: var(--color-background);
+}
+
+.reading-portion+.reading-portion {
+    margin-top: 0.75rem;
+}
+
+.reading-portion h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.reading-portion p {
+    margin-bottom: 0;
+    color: var(--color-text);
+}
+
+.mark-read-btn {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.btn.btn-success.mark-read-btn {
+    --bs-btn-color: var(--color-background);
+    --bs-btn-bg: var(--color-primary);
+    --bs-btn-border-color: var(--color-primary);
+
+    --bs-btn-hover-color: var(--color-background);
+    --bs-btn-hover-bg: var(--color-secondary);
+    --bs-btn-hover-border-color: var(--color-secondary);
+
+    --bs-btn-active-color: var(--color-background);
+    --bs-btn-active-bg: var(--color-primary);
+    --bs-btn-active-border-color: var(--color-primary);
+
+    --bs-btn-disabled-color: var(--color-background);
+    --bs-btn-disabled-bg: var(--color-primary);
+    --bs-btn-disabled-border-color: var(--color-primary);
+
+    --bs-btn-focus-shadow-rgb: 198, 93, 53;
+}
+
+.btn-outline-success {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.mark-read-btn.reading-completed {
+    background-color: transparent;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.mark-read-btn.reading-completed:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.view-switch-btn {
+    --bs-btn-color: var(--color-primary);
+    --bs-btn-border-color: var(--color-primary);
+    --bs-btn-hover-color: var(--color-background);
+    --bs-btn-hover-bg: var(--color-primary);
+    --bs-btn-hover-border-color: var(--color-primary);
+    --bs-btn-focus-shadow-rgb: 198, 93, 53;
+    --bs-btn-active-color: var(--color-background);
+    --bs-btn-active-bg: var(--color-primary);
+    --bs-btn-active-border-color: var(--color-primary);
+    --bs-btn-active-shadow: none;
+}
+
+.calendar-day.selected {
+    border: 3px solid #7c3aed;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background);
+    background-image:
+            linear-gradient(rgba(255, 255, 255, 0.70),
+                rgba(255, 255, 255, 0.70)),
+            url("images/Background.jpg");
+}
+
+.calendar-day.today.selected {
+    border: 3px solid #7c3aed;
+}
+
+/* Current day keeps its amber border when it is not selected */
+.calendar-day.today:not(.selected) {
+    border: 3px solid #ffca2c;
+}
+
+/* Selected current day: purple border in both calendar views */
+.calendar-day.today.selected {
+    border: 3px solid #7c3aed;
+}
+
+.annual-calendar-grid .calendar-day.today.selected {
+    border: 2px solid #7c3aed;
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--color-secondary);
+    border-top: 1px solid var(--color-sand);
+    color: var(--color-background);
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    color: var(--color-background);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.site-footer a:hover {
+    color: var(--color-sand);
+    text-decoration: underline;
+}
+
+/* Compact calendar styling for the annual progress view */
+.annual-calendar-grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 2px;
+}
+
+.annual-calendar-grid .weekday {
+    text-align: center;
+    min-width: 0;
+    font-size: 0.7rem;
+    padding: 2px 0;
+}
+
+.annual-calendar-grid .calendar-day {
+    min-width: 0;
+    height: 22px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    color: var(--color-text);
+}
+
+.annual-calendar-grid .calendar-day span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    min-height: 0;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0.6rem;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.annual-month-card {
+    height: 100%;
+    background-color: #ffffff;
+    border: 1px solid var(--color-sand);
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+}
+
+.annual-month-card h3 {
+    color: var(--color-secondary);
+}
+
+#annualProgressView h2 {
+    color: var(--color-secondary);
+}
+
+/* Keep the number background transparent on fully completed days */
+.annual-calendar-grid .calendar-day.morning-completed.evening-completed span {
+    background-color: transparent;
+}
+
+/* Scale down the selected-day border */
+.annual-calendar-grid .calendar-day.selected {
+    border: 2px solid #7c3aed;
+    padding: 1px 0;
+}
+
+/* Keep today's amber highlight consistent */
+.annual-calendar-grid .calendar-day.today {
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffca2c;
+}
+
+
+/* Fully completed dates stay green, even when today is selected */
+.annual-calendar-grid .calendar-day.today.morning-completed.evening-completed {
+    background: #198754;
+    background-color: #198754;
+    color: white;
+    border-color: #ffca2c;
+}
+
+   /* Reading Curriculum Page */
+
+.reading-plan-subtitle {
+    color: var(--color-secondary) !important;
+}
+
+.curriculum-month {
+    height: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--color-sand);
+    border-radius: 0.375rem;
+    background-color: #ffffff;
+}
+
+.curriculum-month h2 {
+    margin-bottom: 0.35rem;
+    color: var(--color-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.curriculum-table {
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    --bs-table-color: var(--color-text);
+    --bs-table-bg: #ffffff;
+    --bs-table-border-color: var(--color-sand);
+}
+
+.curriculum-table th {
+    background-color: var(--color-secondary);
+    color: var(--color-background);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.curriculum-table th,
+.curriculum-table td {
+    padding: 0.2rem 0.3rem;
+    vertical-align: top;
+}
+
+/* Keep the day column narrow */
+.curriculum-table th:first-child,
+.curriculum-table td:first-child {
+    width: 12%;
+    text-align: center;
+}
+
+/* Allow reading descriptions to wrap */
+.curriculum-table td:nth-child(2),
+.curriculum-table td:nth-child(3) {
+    overflow-wrap: anywhere;
+}
+
+   /* Reading Curriculum Print Settings */
+
+@page {
+    size: letter landscape;
+    margin: 0.3in;
+}
+
+@media print {
+
+    html,
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100%;
+        background: #ffffff;
+        background-image:
+                linear-gradient(rgba(255, 255, 255, 0.70),
+                    rgba(255, 255, 255, 0.70)),
+                url("images/Background.jpg");
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    /* Compact page heading */
+    main.container {
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    main h1 {
+        font-size: 12pt;
+        margin: 0 0 2px !important;
+    }
+
+    main>p {
+        font-size: 7pt;
+        margin: 0 0 5px !important;
+    }
+
+    /* Arrange all months in three columns */
+    #curriculumContainer {
+        display: grid !important;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(min-content, auto));
+        grid-auto-flow: row;
+        gap: 3px;
+        width: 100% !important;
+        height: auto;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #curriculumContainer>div {
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        height: 100% !important;
+        align-self: stretch !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        break-inside: avoid;
+    }
+
+    .curriculum-month {
+        display: flex !important;
+        flex-direction: column;
+        box-sizing: border-box;
+        height: auto !important;
+        min-height: 0;
+        padding: 2px !important;
+        border: 1px solid #cccccc;
+        border-radius: 0;
+        break-inside: avoid;
+        overflow: visible;
+    }
+
+    .curriculum-month h2 {
+        font-size: 8pt !important;
+        font-weight: 700;
+        line-height: 1.1 !important;
+        margin: 0 0 3px !important;
+        text-align: center;
+        color: var(--color-primary) !important;
+    }
+
+    /* Reduce table text and row spacing */
+    .curriculum-table {
+        width: 100% !important;
+        margin: 0 !important;
+        font-size: 5.5pt !important;
+        line-height: 1 !important;
+        border-collapse: collapse !important;
+    }
+
+    .curriculum-table th,
+    .curriculum-table td {
+        padding: 1px !important;
+        line-height: 1 !important;
+        vertical-align: top;
+    }
+
+    .curriculum-table th:first-child,
+    .curriculum-table td:first-child {
+        width: 8% !important;
+    }
+
+    .curriculum-table th {
+        background-color: var(--color-secondary);
+        color: var(--color-background);
+    }
+
+    #curriculumContainer,
+    .curriculum-month,
+    .curriculum-table th {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .reading-header {
+        display: none !important;
+    }
+
+    .site-footer {
+        display: none !important;
+    }
+}
+
+/* Additional reading tools */
+.additional-reading-tools {
+    border-top: 1px solid #eeeeee;
+    padding-top: 1rem;
+}
+
+.tools-heading {
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+    font-size: 0.875rem;
+}
+
+.reading-tool-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid var(--color-sand);
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+    color: var(--color-secondary);
+    text-align: left;
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+    appearance: none;
+    box-shadow: none;
+}
+
+.reading-tool-card:hover {
+    background-color: var(--color-background);
+    color: #212529;
+}
+
+.tool-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+}
+
+.tool-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+}
+
+.tool-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.tool-description {
+    color: var(--color-text);
+    font-size: 0.85rem;
+}
+
+.tool-chevron {
+    flex-shrink: 0;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Landing page header */
+.landing-header {
+    background-color: var(--color-secondary);
+    border-bottom: 1px solid var(--color-sand);
+}
+
+.landing-header .navbar {
+    padding: 0.75rem 0;
+}
+
+.landing-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.landing-header .reading-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 0;
+}
+
+.landing-header .header-navigation .nav-link {
+    color: var(--color-background);
+    font-weight: 500;
+}
+
+.landing-header .header-navigation .nav-link:hover {
+    color: var(--color-sand);
+}
+
+/* Landing page main section */
+.landing-main {
+    flex: 1;
+    display: flex;
+    padding: 0;
+}
+
+/* Centered landing page welcome section */
+.landing-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 520px;
+    padding: 4rem 1rem;
+    text-align: center;
+    background-color: var(--color-background);
+    background-image:
+            linear-gradient(rgba(255, 255, 255, 0.70),
+                rgba(255, 255, 255, 0.70)),
+            url("images/Background.jpg");
+}
+
+.landing-hero-content {
+    width: 100%;
+}
+
+.landing-hero .landing-actions {
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* Hero text container */
+.landing-hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+/* Hero heading */
+.landing-hero h1 {
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    color: var(--color-text);
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/* Hero description */
+.landing-hero p {
+    max-width: 550px;
+    margin: 0 auto;
+    color: var(--color-secondary);
+    font-size: 1.1rem;
+}
+
+/* Center the hero buttons */
+.landing-hero .landing-actions {
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767.98px) {
+    .landing-hero {
+        min-height: 480px;
+        padding: 3rem 1rem;
+
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.70),
+                rgba(255, 255, 255, 0.70)),
+            url("images/Background.jpg");
+    }
+
+    .landing-hero h1 {
+        font-size: 2rem;
+    }
+
+    .landing-hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Center the book cover below the action buttons */
+.landing-book-cover-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Landing page book cover */
+.landing-book-cover {
+    display: block;
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+/* Landing page footer */
+.landing-footer {
+    margin-top: auto;
+    padding: 1.5rem 0;
+    background-color: var(--color-secondary);
+    border-top: 1px solid var(--color-sand);
+}
+
+.landing-footer .footer-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.landing-footer .footer-navigation a {
+    color: var(--color-background);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.landing-footer .footer-navigation a:hover {
+    color: var(--color-sand);
+    text-decoration: underline;
+}
+
+.landing-footer .footer-copyright {
+    margin-bottom: 0;
+    color: var(--color-background);
+    font-size: 0.85rem;
+}
+
+/* Keep the landing page footer at the bottom */
+html,
+body {
+    min-height: 100%;
+}
+
+.landing-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-page .landing-main {
+    flex: 1;
+}
+
+/* Landing page action buttons */
+.landing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.landing-actions .btn {
+    min-width: 110px;
+}
+
+/* Landing page button colors */
+.landing-hero .btn-success {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.landing-hero .btn-success:hover {
+    background-color: #A94C2B;
+    border-color: #A94C2B;
+}
+
+.landing-hero .btn-outline-success {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: #ffffff;
+}
+
+.landing-hero .btn-outline-success:hover {
+    background-color: #1D2F4D;
+    border-color: #1D2F4D;
+}
+
+/* Purple border when today is selected and fully completed in annual view */
+.annual-calendar-grid .calendar-day.today.morning-completed.evening-completed.selected {
+    border: 2px solid #7c3aed;
+}
+
+

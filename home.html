@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bible Reading Tracker</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <!-- Main navigation header -->
+    <nav class="navbar navbar-expand-lg reading-header">
+        <div class="container">
+            <a class="navbar-brand reading-brand" href="home.html">
+                <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M12 7v14" />
+                    <path
+                        d="M3 18V5a1 1 0 0 1 1-1h4a4 4 0 0 1 4 4 4 4 0 0 1 4-4h4a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-4a4 4 0 0 0-4 2 4 4 0 0 0-4-2H4a1 1 0 0 1-1-1z" />
+                </svg>
+                <span>Bible Reading Tracker</span>
+            </a>
+    
+            <div class="header-navigation">
+                <a class="nav-link active" href="home.html" aria-current="page">
+                    Home
+                </a>
+                <a class="nav-link" href="settings.html">
+                    Settings
+                </a>
+                <a class="nav-link logout-link" href="logout">
+                    Log out
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Greeting -->
+    <div class="container">
+        <section class="greeting-card">
+            <h1>Hi, Reader!</h1>
+            <p>Welcome back to your reading journey.</p>
+        </section>
+    </div>
+
+    <!-- Daily reading assignment -->
+    <div class="container">
+        <section class="reading-assignment">
+            <h2 id="assignmentHeading">Today's Reading Assignment</h2>
+    
+            <div class="reading-portion">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" />
+                        <path
+                            d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
+                    </svg>
+                    Morning Reading
+                </h3>
+                <p id="morningAssignment">Assigned reading: Half a chapter</p>
+                <button type="button" class="btn btn-success mark-read-btn">
+                    Mark morning as read
+                </button>
+            </div>
+    
+            <div class="reading-portion">
+                <h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <path
+                            d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.463.402.807a6.5 6.5 0 0 0 8.268 8.268c.344-.215.829-.003.803.397z" />
+                    </svg>
+                    Evening Reading
+                </h3>
+                <p id="eveningAssignment">Assigned reading: 3–4 chapters</p>
+                <button type="button" class="btn btn-success mark-read-btn">
+                    Mark evening as read
+                </button>
+            </div>
+        </section>
+        <!-- Additional reading tools -->
+        <div class="additional-reading-tools mt-4">
+            <p class="tools-heading">Additional reading tools</p>
+        
+            <a href="reading-plan.html" class="reading-tool-card">
+                <span class="tool-icon" aria-hidden="true">
+                    <!-- Checklist icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m9 6 2 2 4-4" />
+                        <path d="M5 7h1M5 12h1M5 17h1" />
+                        <path d="M9 12h10M9 17h10" />
+                    </svg>
+                </span>
+        
+                <span class="tool-content">
+                    <span class="tool-title">Reading Plan</span>
+                    <span class="tool-description">
+                        Browse the complete annual reading plan.
+                    </span>
+                </span>
+        
+                <span class="tool-chevron" aria-hidden="true">›</span>
+            </a>
+        
+            <button type="button" class="reading-tool-card">
+                <span class="tool-icon" aria-hidden="true">
+                    <!-- Message icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8
+                                8.5 8.5 0 0 1-7.6 4.7
+                                8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7
+                                a8.4 8.4 0 0 1-.9-3.8
+                                8.5 8.5 0 0 1 4.7-7.6
+                                8.4 8.4 0 0 1 3.8-.9h.5
+                                a8.5 8.5 0 0 1 8 8v.5z" />
+                    </svg>
+                </span>
+        
+                <span class="tool-content">
+                    <span class="tool-title">Text Me the Main Takeaway</span>
+                    <span class="tool-description">
+                        Send today's key insight to your phone by SMS.
+                    </span>
+                </span>
+        
+                <span class="tool-chevron" aria-hidden="true">›</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        
+        <!-- Horizontal calendar carousel -->
+
+        <div class="container text-end mb-3">
+            <button type="button" id="showAnnualProgress" class="btn btn-sm view-switch-btn">
+                Annual Reading Progress
+            </button>
+        </div>
+
+        <div class="calendar-carousel" id="calendarCarousel">
+            <!-- JavaScript will generate the months here -->
+        </div>
+
+        <div id="annualProgressView" class="container my-4 d-none">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h4 mb-0">Annual Reading Progress</h2>
+                <button type="button" id="backToMonthlyView" class="btn btn-sm view-switch-btn">
+                    Back to Calendar
+                </button>
+            </div>
+        
+            <div id="annualCalendar" class="row gx-4 gy-4">
+                <!-- The 12 monthly calendars will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-end mb-4">
+        <button type="button" id="resetProgressBtn" class="btn btn-outline-danger btn-sm">
+            Reset Reading Progress
+        </button>
+    </div>
+
+    <footer class="site-footer py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-3">
+                &copy; <span id="copyrightYear"></span> Reading Tracker. All rights reserved.
+            </p>
+    
+            <nav aria-label="Footer navigation">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                        <a href="about.html">About</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="settings.html">Settings</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="privacy.html">Privacy Policy</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="app.js"></script>
+
+    
+
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Plan</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Project styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Main navigation header -->
+    <nav class="navbar navbar-expand-lg reading-header">
+        <div class="container">
+            <a class="navbar-brand reading-brand" href="home.html">
+                <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M12 7v14" />
+                    <path
+                        d="M3 18V5a1 1 0 0 1 1-1h4a4 4 0 0 1 4 4 4 4 0 0 1 4-4h4a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-4a4 4 0 0 0-4 2 4 4 0 0 0-4-2H4a1 1 0 0 1-1-1z" />
+                </svg>
+                <span>Daily Bible Reading Tracker</span>
+            </a>
+    
+            <div class="header-navigation">
+                <a class="nav-link" href="home.html">
+                    Home
+                </a>
+                <a class="nav-link" href="settings.html">
+                    Settings
+                </a>
+                <a class="nav-link logout-link" href="logout">
+                    Log out
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="container my-3">
+        <h1 class="text-center mb-1">Reading Plan</h1>
+        <p class="text-center text-muted mb-3 reading-plan-subtitle">
+            Annual reading plan overview
+        </p>
+
+        <div id="curriculumContainer" class="row g-3">
+        </div>
+
+    </main>
+
+    <!-- Site footer -->
+    <footer class="site-footer py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-3">
+                &copy; <span id="copyrightYear"></span> Reading Tracker. All rights reserved.
+            </p>
+            <nav aria-label="Footer navigation">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item"><a href="about.html">About</a></li>
+                    <li class="list-inline-item"><a href="settings.html">Settings</a></li>
+                    <li class="list-inline-item"><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="reading-plan.js"></script>
+</body>
+
+</html>
