@@ -291,7 +291,7 @@ body {
     background-image:
             linear-gradient(rgba(255, 255, 255, 0.70),
                 rgba(255, 255, 255, 0.70)),
-            url("images/Background.jpg");
+            url("assets/images/Background.jpg");
 }
 
 .calendar-day.today.selected {
@@ -489,7 +489,7 @@ body {
         background-image:
                 linear-gradient(rgba(255, 255, 255, 0.70),
                     rgba(255, 255, 255, 0.70)),
-                url("images/Background.jpg");
+                url("assets/images/Background.jpg");
     }
 
     body {
@@ -723,7 +723,7 @@ body {
     background-image:
             linear-gradient(rgba(255, 255, 255, 0.70),
                 rgba(255, 255, 255, 0.70)),
-            url("images/Background.jpg");
+            url("assets/images/Background.jpg");
 }
 
 .landing-hero-content {
@@ -774,7 +774,7 @@ body {
         background-image:
             linear-gradient(rgba(255, 255, 255, 0.70),
                 rgba(255, 255, 255, 0.70)),
-            url("images/Background.jpg");
+            url("assets/images/Background.jpg");
     }
 
     .landing-hero h1 {
